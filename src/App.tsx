@@ -1,7 +1,8 @@
 import Typography from "@mui/material/Typography";
+import MyHeader from "./components/MyHeader";
 
 function App() {
-  return <Typography variant="h1">Hello world@</Typography>;
+  return <MyHeader></MyHeader>;
 }
 
 export default App;
