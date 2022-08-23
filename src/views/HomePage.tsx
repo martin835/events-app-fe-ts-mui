@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
 import { IOrganizer } from "../interfaces/dbObjects";
@@ -23,7 +24,7 @@ const HomePage = () => {
     }
   };
 
-  return <>sasadsd</>;
+  return <Typography variant="h1">sasadsd</Typography>;
 };
 
 export default HomePage;
