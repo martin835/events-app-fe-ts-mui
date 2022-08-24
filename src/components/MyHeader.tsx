@@ -8,7 +8,6 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import {
-  CssBaseline,
   Divider,
   Drawer,
   List,
@@ -53,7 +52,7 @@ export default function MyHeader(props: Props) {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <AppBar component="nav">
+      <AppBar component="nav" position="sticky">
         <Toolbar>
           <IconButton
             color="inherit"
