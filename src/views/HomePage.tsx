@@ -37,33 +37,36 @@ const HomePage = () => {
   };
 
   return (
-    <Grid container justifyContent="center" mt={1}>
-      <Grid item xs={12} textAlign="center" sx={{ backgroundColor: "yellow" }}>
-        <Paper sx={{ py: "15px" }}>
-          {" "}
-          <Typography variant="h1" sx={{ fontSize: "4rem" }}>
-            Prehľad divadiel na Slovensku
+    <Box sx={{ padding: "0px 24px 0px 24px" }}>
+      <Grid container justifyContent="center" mt={1}>
+        <Grid item xs={12} textAlign="center">
+          <Box sx={{ py: "15px" }}>
+            {" "}
+            <Typography variant="h2" component="h1">
+              Prehľad divadiel na Slovensku
+            </Typography>
+          </Box>
+          <Divider />
+        </Grid>
+
+        <Grid item xs={4}>
+          <Typography variant="h2" sx={{ fontSize: "2rem" }}>
+            Zoznam divadiel
           </Typography>
-        </Paper>
-      </Grid>
-      <Grid item xs={4}>
-        <Typography variant="h2" sx={{ fontSize: "2rem" }}>
-          Zoznam divadiel
-        </Typography>
-        <List
-          sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-        >
-          {theaters?.map((theater) => (
-            <>
-              <ListItem alignItems="flex-start" key={theater._id}>
-                <ListItemAvatar>
-                  <Avatar alt="Remy Sharp" src={`${theater.coverImg}`} />
-                </ListItemAvatar>
-                <ListItemText
-                  primary={`${theater.name}`}
-                  secondary={
-                    <React.Fragment>
-                      {/* <Typography
+          <List
+            sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+          >
+            {theaters?.map((theater) => (
+              <>
+                <ListItem alignItems="flex-start" key={theater._id}>
+                  <ListItemAvatar>
+                    <Avatar alt="Remy Sharp" src={`${theater.coverImg}`} />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={`${theater.name}`}
+                    secondary={
+                      <React.Fragment>
+                        {/* <Typography
                         sx={{ display: "inline" }}
                         component="span"
                         variant="body2"
@@ -71,28 +74,29 @@ const HomePage = () => {
                       >
                         {theater.city}
                       </Typography> */}
-                      <Button
-                        size="small"
-                        variant="outlined"
-                        sx={{ mt: "10px" }}
-                      >
-                        Viac
-                      </Button>
-                    </React.Fragment>
-                  }
-                />
-              </ListItem>
-              <Divider variant="inset" component="li" />
-            </>
-          ))}
-        </List>
+                        <Button
+                          size="small"
+                          variant="outlined"
+                          sx={{ mt: "10px" }}
+                        >
+                          Viac
+                        </Button>
+                      </React.Fragment>
+                    }
+                  />
+                </ListItem>
+                <Divider variant="inset" component="li" />
+              </>
+            ))}
+          </List>
+        </Grid>
+        <Grid item xs={8} textAlign="center">
+          <Typography variant="h2" sx={{ fontSize: "2rem" }}>
+            Nove predstavenia
+          </Typography>
+        </Grid>
       </Grid>
-      <Grid item xs={8} textAlign="center">
-        <Typography variant="h2" sx={{ fontSize: "2rem" }}>
-          Nove predstavenia
-        </Typography>
-      </Grid>
-    </Grid>
+    </Box>
   );
 };
 
